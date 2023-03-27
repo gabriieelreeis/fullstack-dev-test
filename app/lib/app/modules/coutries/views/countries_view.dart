@@ -2,6 +2,7 @@ import 'package:app/app/modules/coutries/controllers/countries_controller.dart';
 import 'package:app/app/routes/app_pages.dart';
 import 'package:app/app/shared/services/loading_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CountriesView extends GetView<CountriesController> {
@@ -13,7 +14,16 @@ class CountriesView extends GetView<CountriesController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Países'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Países'),
+            Text(
+              'Confira a lista de paises disponíveis',
+              style: TextStyle(fontSize: 12.sp),
+            ),
+          ],
+        ),
       ),
       body: Obx(() {
         final countries = controller.countries;
@@ -29,7 +39,7 @@ class CountriesView extends GetView<CountriesController> {
 
             return ListTile(
               title: Text(country.name),
-              leading: const Icon(Icons.arrow_right),
+              trailing: const Icon(Icons.arrow_right_outlined),
               onTap: () => _goToCities(country.id),
             );
           },

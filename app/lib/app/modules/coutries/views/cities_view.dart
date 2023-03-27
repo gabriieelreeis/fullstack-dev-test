@@ -1,6 +1,7 @@
 import 'package:app/app/modules/coutries/controllers/cities_controller.dart';
 import 'package:app/app/shared/services/loading_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CitiesView extends GetView<CitiesController> {
@@ -15,7 +16,16 @@ class CitiesView extends GetView<CitiesController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cidades'),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('Países'),
+            Text(
+              'Confira a lista de cidades disponíveis',
+              style: TextStyle(fontSize: 12.sp),
+            ),
+          ],
+        ),
       ),
       body: Obx(() {
         final cities = controller.cities;
