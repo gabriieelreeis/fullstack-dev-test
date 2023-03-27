@@ -15,7 +15,7 @@ class CitiesView extends GetView<CitiesController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cidades'),
+        title: const Text('Cidades'),
       ),
       body: Obx(() {
         final cities = controller.cities;

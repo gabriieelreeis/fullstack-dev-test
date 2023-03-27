@@ -13,7 +13,7 @@ class CountriesView extends GetView<CountriesController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Países'),
+        title: const Text('Países'),
       ),
       body: Obx(() {
         final countries = controller.countries;
@@ -29,6 +29,7 @@ class CountriesView extends GetView<CountriesController> {
 
             return ListTile(
               title: Text(country.name),
+              leading: const Icon(Icons.arrow_right),
               onTap: () => _goToCities(country.id),
             );
           },
