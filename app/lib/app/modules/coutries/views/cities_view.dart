@@ -19,7 +19,7 @@ class CitiesView extends GetView<CitiesController> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Países'),
+            const Text('Cidades'),
             Text(
               'Confira a lista de cidades disponíveis',
               style: TextStyle(fontSize: 12.sp),
